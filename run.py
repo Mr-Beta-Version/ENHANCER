@@ -14,11 +14,13 @@ except:
     system("bash token.sh");exit()
 
 name = input("Enter Path : ")
+try:file = open(name,'rb')
+except:exit("File Not Found")
 save = name.split('.')[0]+'_mrbeta'+'.jpg'
 
 print("Wait....")
 
-link = version.predict(img=open(name,'rb').read())
+link = version.predict(img=file)
 
 download(link, save)
 
