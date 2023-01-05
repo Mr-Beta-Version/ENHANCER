@@ -1,6 +1,6 @@
 # Programme By Mr Beta
 from os import system
-
+system("clear")
 while True:
     try:import replicate;break
     except:system('pip install replicate')
@@ -15,3 +15,10 @@ while True:
         auth = input("Enter Auth Token : ")
         system("export REPLICATE_API_TOKEN="+auth)
 
+file = open(input("Enter Path : "),'rb').read()
+
+print("Wait....")
+
+link = version.predict(img=file)
+
+print(link)
