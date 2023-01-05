@@ -15,11 +15,10 @@ except:
 
 name = input("Enter Path : ")
 save = name.split('.')[0]+'_mrbeta'+'.jpg'
-file = open(name,'rb').read()
 
 print("Wait....")
 
-link = version.predict(img=file)
+link = version.predict(img=open(name,'rb').read())
 
 download(link, save)
 
