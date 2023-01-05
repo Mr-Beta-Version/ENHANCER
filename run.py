@@ -1,5 +1,6 @@
 # Programme By Mr Beta
 from os import system
+from urllib.request import urlretrieve as download
 system("clear")
 while True:
     try:import replicate;break
@@ -15,10 +16,15 @@ while True:
         auth = input("Enter Auth Token : ")
         system("export REPLICATE_API_TOKEN="+auth)
 
-file = open(input("Enter Path : "),'rb').read()
+name = input("Enter Path : ")
+save = name.split('.')[0]+'_mrbeta'+'.jpg'
+file = open(name,'rb').read()
 
 print("Wait....")
 
 link = version.predict(img=file)
 
-print(link)
+download(link, save)
+
+print(f"File Saved To : {save}")
+
