@@ -4,7 +4,7 @@ from urllib.request import urlretrieve as download
 system("clear")
 while True:
     try:import replicate;break
-    except:system('pip install replicate')
+    except:system('pip install replicate');system("clear")
 
 
 try:
