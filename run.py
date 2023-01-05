@@ -6,15 +6,13 @@ while True:
     try:import replicate;break
     except:system('pip install replicate')
 
-while True:
-    try:
-        tools = replicate.models.get("tencentarc/gfpgan")
-        version = tools.versions.get("9283608cc6b7be6b65a8e44983db012355fde4132009bf99d976b2f0896856a3")
-        break
-    except:
-        print("Get Auth Token : https://replicate.com/docs/reference/http#authentication ")
-        auth = input("Enter Auth Token : ")
-        system("export REPLICATE_API_TOKEN="+auth)
+
+try:
+    tools = replicate.models.get("tencentarc/gfpgan")
+    version = tools.versions.get("9283608cc6b7be6b65a8e44983db012355fde4132009bf99d976b2f0896856a3")
+    break
+except:
+    system("bash token.sh");exit()
 
 name = input("Enter Path : ")
 save = name.split('.')[0]+'_mrbeta'+'.jpg'
